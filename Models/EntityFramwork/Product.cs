@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomation.Models.EntityFramework
@@ -22,6 +23,6 @@ namespace MvcOnlineAutomation.Models.EntityFramework
         [StringLength(250)]
         public string ProductImage { get; set; }
         public Category Category { get; set; }//bir ürünümün birden fazla kategorisi olamaz
-        public SalesMovement SalesMovement { get; set; }
+        public ICollection<SalesMovement> SalesMovements { get; set; }
     }
 }

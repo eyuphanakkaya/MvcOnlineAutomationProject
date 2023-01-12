@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomation.Models.EntityFramework
@@ -19,7 +21,7 @@ namespace MvcOnlineAutomation.Models.EntityFramework
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string EmployeeImage { get; set; }
-        public SalesMovement SalesMovement { get; set; }
+        public ICollection<SalesMovement> SalesMovements { get; set; }
         public Departmant Departmant { get; set; }
     }
 }

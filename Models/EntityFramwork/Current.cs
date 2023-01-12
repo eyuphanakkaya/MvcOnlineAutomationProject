@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomation.Models.EntityFramework
@@ -19,7 +20,7 @@ namespace MvcOnlineAutomation.Models.EntityFramework
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CurrentEmail { get; set; }
-        public SalesMovement SalesMovement { get; set; }
+        public ICollection<SalesMovement> SalesMovements { get; set; }
 
     }
 }
