@@ -1,0 +1,16 @@
+﻿
+@model MvcOnlineAutomationProject.Models.EntityFramework.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn-block">Kaydet</button>
+</form>
+
+
+

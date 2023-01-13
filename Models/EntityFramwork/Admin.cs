@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MvcOnlineAutomation.Models.EntityFramework
+namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
     public class Admin
     {

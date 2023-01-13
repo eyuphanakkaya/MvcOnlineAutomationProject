@@ -1,4 +1,5 @@
-﻿
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,9 +9,21 @@
     <tr>
         <th>Id</th>
         <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/GetCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
 
 </table>
 
-<button class="btn btn-outline-primary">Yeni Kategori Kaydet</button>
+<a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori Kaydet</a>
 

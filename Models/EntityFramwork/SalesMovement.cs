@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MvcOnlineAutomation.Models.EntityFramework
+namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
     public class SalesMovement
     {

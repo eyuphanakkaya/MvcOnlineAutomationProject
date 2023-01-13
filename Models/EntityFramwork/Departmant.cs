@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MvcOnlineAutomation.Models.EntityFramework
+namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
     public class Departmant
     {
@@ -12,5 +13,6 @@ namespace MvcOnlineAutomation.Models.EntityFramework
         [StringLength(30)]
         public string DepartmantName { get; set; }
         public ICollection<Employee> Employees { get; set; }
+
     }
 }
