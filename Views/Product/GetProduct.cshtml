@@ -1,0 +1,38 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Product
+@{
+    ViewBag.Title = "GetProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Ürün Adı</label>
+                    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+                    <br />
+                    <label>Marka</label>
+                    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+                    <br />
+                    <label>Stok</label>
+                    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+                    <br />
+                    <label>Alış Fiyatı</label>
+                    @Html.TextBoxFor(x => x.BuyPrice, new { @class = "form-control" })
+                    <br />
+                    <label>Satış Fiyatı</label>
+                    @Html.TextBoxFor(x => x.SellPrice, new { @class = "form-control" })
+                    <br />
+                    <label>Durum</label>
+                    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+                    <br />
+                    <label>Resim</label>
+                    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+                    <br />
+                    <label>Kategori</label>
+                    @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+                    <br />
+                    @Html.HiddenFor(x => x.ProductId)
+                </div>
+                <button class="btn btn-block">Güncelle</button>
+            }
+

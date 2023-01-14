@@ -1,0 +1,40 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Ürün Id</td>
+        <td>Ürün Adı</td>
+        <td>Marka</td>
+        <td>Stok</td>
+        <td>Alış Fiyatı</td>
+        <td>Satış Fiyatı</td>
+        <td>Durum</td>
+        <td>Resim</td>
+        <td>Kategori</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.Brand</td>
+            <td>@item.Stock</td>
+            <td>@item.BuyPrice</td>
+            <td>@item.SellPrice</td>
+            <td>@item.Status</td>
+            <td>@item.ProductImage</td>
+            <td>@item.Category</td>
+            <td><a href="/Product/GetProduct/@item.ProductId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Product/AddProduct/" class="btn btn-danger">Yeni Ürün Ekle</a>
+
