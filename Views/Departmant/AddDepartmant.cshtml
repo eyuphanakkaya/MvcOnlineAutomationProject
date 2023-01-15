@@ -1,0 +1,14 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Departmant
+@{
+    ViewBag.Title = "AddDepartmant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <label>Departman Adı</label>
+    <br />
+    @Html.TextBoxFor(x => x.DepartmantName,new {@class="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

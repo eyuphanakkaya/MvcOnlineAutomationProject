@@ -1,0 +1,27 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<Departmant>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Departman Id</td>
+        <td>Departman Adı</td>
+        <td>Durum</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DepartmantId</td>
+            <td>@item.DepartmantName</td>
+
+        </tr>
+    }
+    
+</table>
+<a href="/Departmant/AddDepartmant/" class="btn btn-dark">Yeni Departman Ekle </a>
+
