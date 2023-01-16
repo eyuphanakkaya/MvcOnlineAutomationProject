@@ -18,11 +18,13 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         public decimal BuyPrice { get; set; }
         public decimal SellPrice { get; set; }
         public bool Status { get; set; }
+       
 
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string ProductImage { get; set; }
-        public Category Category { get; set; }//bir ürünümün birden fazla kategorisi olamaz
+        public int Categoryid { get; set; }
+        public virtual Category Category { get; set; }//bir ürünümün birden fazla kategorisi olamaz
         public ICollection<SalesMovement> SalesMovements { get; set; }
     }
 }

@@ -13,7 +13,6 @@
         <td>Stok</td>
         <td>Alış Fiyatı</td>
         <td>Satış Fiyatı</td>
-        <td>Durum</td>
         <td>Resim</td>
         <td>Kategori</td>
         <td>Güncelle</td>
@@ -27,10 +26,10 @@
             <td>@item.Stock</td>
             <td>@item.BuyPrice</td>
             <td>@item.SellPrice</td>
-            <td>@item.Status</td>
             <td>@item.ProductImage</td>
-            <td>@item.Category</td>
+            <td>@item.Category.CategoryName</td>
             <td><a href="/Product/GetProduct/@item.ProductId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 

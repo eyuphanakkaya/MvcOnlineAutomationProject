@@ -34,6 +34,13 @@ namespace MvcOnlineAutomationProject.Controllers
             var Values = context.Products.Find(Id);
             return View("GetProduct",Values);
         }
+        public ActionResult DeleteProduct(int Id)
+        {
+            var Values=context.Products.Find(Id);
+            Values.Status = false;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public ActionResult UpdateProduct(Product product)
         {
             var Values = context.Products.Find(product.ProductId);
