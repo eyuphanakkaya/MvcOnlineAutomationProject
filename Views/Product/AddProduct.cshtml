@@ -23,8 +23,12 @@
     <label>Resim</label>
     @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
     <br />
+    <label>Durum</label>
+    @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    <br />
     <label>Kategori</label>
-    @Html.TextBoxFor(x => x.Categoryid, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.Categoryid, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.Categoryid, new { @class = "form-control" })*@
     <br />
 
     <button class="btn btn-dark">Kaydet</button>

@@ -14,12 +14,19 @@ namespace MvcOnlineAutomationProject.Controllers
         Context context = new Context();
         public ActionResult Index()
         {
-            var Values = context.Products.ToList();
+            var Values = context.Products.Where(x => x.Status == true).ToList();
             return View(Values);
         }
         [HttpGet]
         public ActionResult AddProduct()
         {
+            List<SelectListItem> Value = (from x in context.Categories.ToList()
+                                          select new SelectListItem 
+                                          { 
+                                          Text=x.CategoryName,//bize gözükecek alan
+                                          Value=x.CategoryId.ToString()
+                                          }).ToList();
+            ViewBag.Values = Value;
             return View();
         }
         [HttpPost]
@@ -27,16 +34,23 @@ namespace MvcOnlineAutomationProject.Controllers
         {
             context.Products.Add(product);
             context.SaveChanges();
-            return RedirectToAction("Index");   
+            return RedirectToAction("Index");
         }
         public ActionResult GetProduct(int Id)
         {
+            List<SelectListItem> Value = (from x in context.Categories.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.CategoryName,//bize gözükecek alan
+                                              Value = x.CategoryId.ToString()
+                                          }).ToList();
+            ViewBag.Vle = Value;
             var Values = context.Products.Find(Id);
-            return View("GetProduct",Values);
+            return View("GetProduct", Values);
         }
         public ActionResult DeleteProduct(int Id)
         {
-            var Values=context.Products.Find(Id);
+            var Values = context.Products.Find(Id);
             Values.Status = false;
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -45,16 +59,16 @@ namespace MvcOnlineAutomationProject.Controllers
         {
             var Values = context.Products.Find(product.ProductId);
             Values.ProductName = product.ProductName;
-            Values.Brand=product.Brand;
+            Values.Brand = product.Brand;
             Values.Status = product.Status;
-            Values.BuyPrice=product.BuyPrice;
-            Values.SellPrice=product.SellPrice;
-            Values.Category=product.Category;
+            Values.BuyPrice = product.BuyPrice;
+            Values.SellPrice = product.SellPrice;
+            Values.Category = product.Category;
             Values.ProductImage = product.ProductImage;
             Values.Status = product.Status;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+
     }
 }
