@@ -1,0 +1,33 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<Current>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <td>CariID</td>
+        <td>Adı</td>
+        <td>Soyadı</td>
+        <td>Şehir</td>
+        <td>Mail</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CurrentId</td>
+            <td>@item.CurrentName</td>
+            <td>@item.CurrentSurname</td>
+            <td>@item.CurrentCity</td>
+            <td>@item.CurrentEmail</td>
+            <td><a href="/Current/StatusCurrent/@item.CurrentId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Current/GetCurrent/@item.CurrentId" class="btn btn-danger">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Current/AddCurrent/" class="btn btn-outline-success">Yeni Cari Ekle</a>
+

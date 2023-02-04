@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
@@ -10,16 +11,17 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         public int CurrentId { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
-        public string CurremtName { get; set; }
+        public string CurrentName { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
-        public string CurremtSurname { get; set; }
+        public string CurrentSurname { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(13)]
-        public string CurremtCity { get; set; }
+        public string CurrentCity { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CurrentEmail { get; set; }
+        public bool Status { get; set; }
         public ICollection<SalesMovement> SalesMovements { get; set; }
 
     }

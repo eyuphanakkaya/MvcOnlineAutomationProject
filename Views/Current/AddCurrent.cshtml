@@ -1,0 +1,27 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Current
+@{
+    ViewBag.Title = "AddCurrent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <label>Cari İsim</label>
+    <br />
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+    <br />
+    <label>Cari Soyisim</label>
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+    <br />
+    <label>Cari Şehir</label>
+    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+    <br />
+    <label>Cari Mail</label>
+    @Html.TextBoxFor(x => x.CurrentEmail, new { @class = "form-control" })
+    <br />
+    <label>Cari Durum</label>
+    @Html.TextBoxFor(x=>x.Status,new {@class="form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

@@ -1,0 +1,23 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form class=" form-group" method="post">
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <label>Personel Resmi</label>
+    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+    <label>Personel Departman</label>
+    @*@Html.TextBoxFor(x => x.Departmant, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-dark">Kaydet</button>
+</form>
+

@@ -1,0 +1,32 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Personel Id</td>
+        <td>Personel Adı</td>
+        <td>Personel Soyadı</td>
+        <td>Personel Resim</td>
+        <td>Personel Departman</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeId</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+            <td>@item.EmployeeImage</td>
+            <td>@item.Departmant.DepartmantName</td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Employee/AddEmployee/" class="btn btn-success">Yeni Personel Ekle</a>
+
