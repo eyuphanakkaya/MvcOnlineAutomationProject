@@ -12,12 +12,17 @@
         <td>Departman Adı</td>
         <td>Durum</td>
         <td>Güncelle</td>
+        <td>Detaylar</td>
+
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.DepartmantId</td>
             <td>@item.DepartmantName</td>
+            <td><a href="/Departmant/DeleteDepartmant/@item.DepartmantId" class="btn btn-dark">Sil</a></td>
+            <td><a href="/Departmant/GetDepartmant/@item.DepartmantId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Departmant/DetailDepartmant/@item.DepartmantId" class="btn btn-success">Detaylar</a></td>
 
         </tr>
     }

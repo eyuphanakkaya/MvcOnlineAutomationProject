@@ -1,0 +1,18 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Departmant
+@{
+    ViewBag.Title = "GetDepartmant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetDepartmant</h2>@*değer taşımak için*@
+@using (Html.BeginForm("UpdateDepartmant", "Departmant", FormMethod.Post))
+{
+<div class="form-group">
+    <label>Departman Adı</label>
+    @Html.TextBoxFor(x => x.DepartmantName, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.DepartmantId)
+</div>
+<button class="btn btn-dark">Güncelle</button>
+}
+
+

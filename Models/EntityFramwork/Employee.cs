@@ -22,6 +22,8 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         [StringLength(250)]
         public string EmployeeImage { get; set; }
         public ICollection<SalesMovement> SalesMovements { get; set; }
+
+        public int Departmantid { get; set; }
         public virtual Departmant Departmant { get; set; }
     }
 }

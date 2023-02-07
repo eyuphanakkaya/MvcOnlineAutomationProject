@@ -1,0 +1,35 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "SalesDepartmant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>SalesDepartmant</h2>
+<table class="table table-condensed">
+    <tr>
+        <td>Id</td>
+        <td>Adet</td>
+        <td>Fiyat</td>
+        <td>Toplam Tutar</td>
+        <td>Cari</td>
+        <td>Personel</td>
+        <td>Ürün</td>
+        <td>Yazdır</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SalesMovementsId</td>
+            <td>@item.Piece</td>
+            <td>@item.Price</td>
+            <td>@item.TotalPrice</td>
+            <td>@item.Current.CurrentName</td>
+            <td>@item.Employee.EmployeeName</td>
+            <td>@item.Product.ProductName</td>
+            <td><a href="#" class="btn btn-dark">Yazdır</a></td>
+        </tr>
+    }
+
+
+</table>

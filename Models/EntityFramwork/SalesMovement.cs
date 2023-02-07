@@ -12,6 +12,10 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         public int Piece { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
+
+        public int Productid { get; set; }
+        public int Currentid { get; set; }
+        public int Employeeid { get; set; }
         public virtual Product Product { get; set; }
         public virtual Current Current { get; set; }
         public virtual Employee Employee { get; set; }

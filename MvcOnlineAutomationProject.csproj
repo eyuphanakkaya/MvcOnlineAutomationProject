@@ -323,6 +323,9 @@
     <Content Include="Views\Current\GetCurrent.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Views\Departmant\GetDepartmant.cshtml" />
+    <Content Include="Views\Departmant\DetailDepartmant.cshtml" />
+    <Content Include="Views\Departmant\SalesDepartmant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
