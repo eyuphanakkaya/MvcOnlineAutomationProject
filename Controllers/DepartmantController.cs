@@ -59,7 +59,7 @@ namespace MvcOnlineAutomationProject.Controllers
         public ActionResult SalesDepartmant(int id)
         {
             var Values = context.SalesMovements.Where(x => x.Employeeid == id).ToList();
-            var Vlu=context.Employees.Where(x=>x.EmployeeId == id).Select(y => y.EmployeeName).FirstOrDefault();
+            var Vlu=context.Employees.Where(x=>x.EmployeeId == id).Select(y => y.EmployeeName +" "+y.EmployeeSurname ).FirstOrDefault();
             ViewBag.V=Vlu;
 
             return View(Values);

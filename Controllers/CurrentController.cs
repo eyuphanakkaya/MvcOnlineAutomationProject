@@ -52,5 +52,12 @@ namespace MvcOnlineAutomationProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DetailCurrent(int id)
+        {
+            var Values = context.SalesMovements.Where(x => x.Currentid ==id).ToList();
+            var Vlu=context.Currents.Where(x=>x.CurrentId==id).Select(y=>y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
+             ViewBag.V = Vlu;
+            return View(Values);
+        }
     }
 }

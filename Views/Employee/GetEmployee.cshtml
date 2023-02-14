@@ -1,0 +1,30 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Employee
+@{
+    ViewBag.Title = "GetEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetEmployee</h2>
+
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+{
+    <div class="form-group">
+        @*@Html.HiddenFor(x=>x.ProductId)*@
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        <br />
+        <label>Soyad</label>
+        @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+        <br />
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+        <br />
+        <label>Kategori</label>
+        @*@Html.TextBoxFor(x => x.Category, new { @class = "form-control" })*@
+        @Html.DropDownListFor(x => x.Departmantid, (List<SelectListItem>)ViewBag.V, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.EmployeeId)
+    </div>
+    <button class="btn btn-default" style="background-color:coral">Güncelle</button>
+}
+

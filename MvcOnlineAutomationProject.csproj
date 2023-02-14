@@ -133,6 +133,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SalesMovementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -326,6 +327,10 @@
     <Content Include="Views\Departmant\GetDepartmant.cshtml" />
     <Content Include="Views\Departmant\DetailDepartmant.cshtml" />
     <Content Include="Views\Departmant\SalesDepartmant.cshtml" />
+    <Content Include="Views\Current\DetailCurrent.cshtml" />
+    <Content Include="Views\Employee\GetEmployee.cshtml" />
+    <Content Include="Views\SalesMovement\Index.cshtml" />
+    <Content Include="Views\SalesMovement\AddSalesMovement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

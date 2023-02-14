@@ -1,0 +1,43 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DetailCurrent</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman=@ViewBag.V</li>
+</ol>
+<table class="table table-bordered">
+    <tr>
+        <td>Satış Id</td>
+        <td>Ürün</td>
+        <td>Cari</td>
+        <td>Personel</td>
+        <td>Adet</td>
+        <td>Fiyat</td>
+        <td>Toplam</td>
+        <td>Tarih</td>
+        <td>Güncelle</td>
+        <td>Detaylar</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SalesMovementsId</td>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Current.CurrentName @item.Current.CurrentSurname</td>
+            <td>@item.Employee.EmployeeName  @item.Employee.EmployeeSurname</td>
+            <td>@item.Piece</td>
+            <td>@item.Price</td>
+            <td>@item.TotalPrice</td>
+            <td>@item.Date</td>
+            <td><a href="#" class="btn btn-default" style="background-color:darkgrey">Güncelle</a></td>
+            <td><a href="#" class="btn btn-default" style="background-color:darkgrey">Detaylar</a></td>
+        </tr>
+            }
+      
+    </table>
+<a href="/SalesMovement/AddSalesMovement/" class="btn btn-default" style="background-color:brown">Yeni Satış Ekle</a>

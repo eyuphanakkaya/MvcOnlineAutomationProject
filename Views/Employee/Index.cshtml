@@ -9,11 +9,11 @@
     <tr>
         <td>Personel Id</td>
         <td>Personel Adı</td>
-        <td>Personel Soyadı</td>
-        <td>Personel Resim</td>
-        <td>Personel Departman</td>
-        <td>Sil</td>
+        <td>Soyadı</td>
+        <td>Resim</td>
+        <td>Departman</td>
         <td>Güncelle</td>
+        <td>Satışlar</td>
     </tr>
     @foreach (var item in Model)
     {
@@ -23,10 +23,10 @@
             <td>@item.EmployeeSurname</td>
             <td>@item.EmployeeImage</td>
             <td>@item.Departmant.DepartmantName</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Employee/GetEmployee/@item.EmployeeId" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Departmant/SalesDepartmant/@item.EmployeeId" class="btn btn-default" style="background-color:darkgray">Satışlar</a></td>
         </tr>
     }
 </table>
-<a href="/Employee/AddEmployee/" class="btn btn-success">Yeni Personel Ekle</a>
+<a href="/Employee/AddEmployee/" class="btn btn-default" style="background-color:burlywood">Yeni Personel Ekle</a>
 

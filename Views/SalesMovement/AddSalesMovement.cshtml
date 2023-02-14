@@ -1,0 +1,11 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.SalesMovement
+@{
+    ViewBag.Title = "AddSalesMovement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddSalesMovement</h2>
+<form class="form-group" method="post">
+    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+</form>
+

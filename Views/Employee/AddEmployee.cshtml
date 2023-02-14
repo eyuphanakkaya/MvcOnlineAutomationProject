@@ -17,6 +17,7 @@
     <br />
     <label>Personel Departman</label>
     @*@Html.TextBoxFor(x => x.Departmant, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x=>x.Departmant,(List<SelectListItem>)ViewBag.V,new {@class="form-control"})
     <br />
     <button class="btn btn-dark">Kaydet</button>
 </form>
