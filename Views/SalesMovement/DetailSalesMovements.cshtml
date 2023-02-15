@@ -2,7 +2,7 @@
 
 @model List<SalesMovement>
 @{
-    ViewBag.Title = "SalesDepartmant";
+    ViewBag.Title = "DetailSalesDepartmant";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -60,9 +60,9 @@
 
             <td>@item.Date</td>
 
-            <td><a href="/SalesMovment/GetSalesMovment/@k.Satisid" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/SalesMovment/GetSalesMovment/@item.SalesMovementsId" class="btn btn-warning">Güncelle</a></td>
 
-            <td><a href="/Satis/SalesMovmentDetail/@k.Satisid" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
+            <td><a href="/DetailSatis/SalesMovment/@item.SalesMovementsId" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
 
         </tr>
 
@@ -89,4 +89,5 @@
     $('#tbl1').dataTable({});
 
 </script>
+
 

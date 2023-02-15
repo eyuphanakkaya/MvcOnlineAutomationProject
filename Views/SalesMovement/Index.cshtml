@@ -34,10 +34,10 @@
             <td>@item.Price</td>
             <td>@item.TotalPrice</td>
             <td>@item.Date</td>
-            <td><a href="#" class="btn btn-default" style="background-color:darkgrey">Güncelle</a></td>
-            <td><a href="#" class="btn btn-default" style="background-color:darkgrey">Detaylar</a></td>
+            <td><a href="/SalesMovement/GetSalesMovement/@item.SalesMovementsId" class="btn btn-default" style="background-color:darkgrey">Güncelle</a></td>
+            <td><a href="/SalesMovment/DetailSalesMovements/@item.SalesMovementsId" class="btn btn-default" style="background-color:darkgrey">Detaylar</a></td>
         </tr>
             }
       
     </table>
-<a href="/SalesMovement/AddSalesMovement/" class="btn btn-default" style="background-color:brown">Yeni Satış Ekle</a>
+<a href="/SalesMovement/AddSalesMovement/" class="btn btn-default" style="background-color:brown">Yeni Satış Yap</a>

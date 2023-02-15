@@ -1,0 +1,36 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.SalesMovement
+@{
+    ViewBag.Title = "GetSalesMovement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetSalesMovement</h2>
+@using (Html.BeginForm("UpdateSalesMovement", "SalesMovement", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Adet</label>
+        @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+        <br />
+        <label>Fiyat</label>
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        <label>Toplam Tutar</label>
+        @Html.TextBoxFor(x => x.TotalPrice, new { @class = "form-control" })
+        <br />
+        <label>Cari</label>
+        @Html.DropDownListFor(x => x.Currentid, (List<SelectListItem>)ViewBag.V1, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.DropDownListFor(x => x.Employeeid, (List<SelectListItem>)ViewBag.V2, new { @class = "form-control" })
+        <br />
+        <label>Ürün</label>
+        @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.V, new { @class = "form-control" })
+        @*<br />
+            @Html.TextBoxFor(x=>x.Date,new { @class="form-control"})*@
+        <br />
+        @Html.HiddenFor(x => x.SalesMovementsId);
+
+
+    </div>
+    <button class="btn btn-default" style="background-color:azure">Güncelle</button>
+}

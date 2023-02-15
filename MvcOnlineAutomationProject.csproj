@@ -331,6 +331,8 @@
     <Content Include="Views\Employee\GetEmployee.cshtml" />
     <Content Include="Views\SalesMovement\Index.cshtml" />
     <Content Include="Views\SalesMovement\AddSalesMovement.cshtml" />
+    <Content Include="Views\SalesMovement\GetSalesMovement.cshtml" />
+    <Content Include="Views\SalesMovement\DetailSalesMovements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

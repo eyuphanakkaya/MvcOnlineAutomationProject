@@ -6,6 +6,28 @@
 
 <h2>AddSalesMovement</h2>
 <form class="form-group" method="post">
-    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(x=>x.Price,new  { @class="form-control"}) 
+    <br />
+    <label>Toplam Tutar</label>
+    @Html.TextBoxFor(x=>x.TotalPrice,new {@class="form-control"})
+    <br />
+    <label>Cari</label>
+    @Html.DropDownListFor(x=>x.Currentid,(List<SelectListItem>)ViewBag.V1,new {@class="form-control"})
+    <br />
+    <label>Personel</label>
+    @Html.DropDownListFor(x=>x.Employeeid,(List<SelectListItem>)ViewBag.V2,new {@class="form-control"})
+    <br />
+    <label>Ürün</label>
+    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.V, new { @class = "form-control" })
+    @*<br />
+    @Html.TextBoxFor(x=>x.Date,new { @class="form-control"})*@
+    <br />
+    <button class="btn btn-default" style="background-color:azure">Ekle</button>
 </form>
+
 
