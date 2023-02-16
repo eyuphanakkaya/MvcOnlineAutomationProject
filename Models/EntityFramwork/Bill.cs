@@ -24,7 +24,10 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string TaxAdministration { get; set; }
-        public DateTime Time { get; set; }
+
+        [Column(TypeName = "Char")]
+        [StringLength(5)]
+        public string Time { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -33,6 +36,9 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Receiver { get; set; }
+
+        public decimal Total { get; set; }
+
         public ICollection<InvoiceItem> InvoiceItems { get; set; }
 
 

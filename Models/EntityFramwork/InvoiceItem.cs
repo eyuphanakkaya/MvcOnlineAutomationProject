@@ -15,6 +15,7 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         public int Amount { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Price { get; set; }
+        public int Billid { get; set; }
         public virtual Bill Bill { get; set; }
 
     }

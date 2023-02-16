@@ -69,6 +69,11 @@ namespace MvcOnlineAutomationProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult ProductList()
+        {
+            var Value=context.Products.ToList();
+            return View(Value);
+        }
 
     }
 }
