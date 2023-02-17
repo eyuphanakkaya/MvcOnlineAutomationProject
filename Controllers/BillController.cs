@@ -36,7 +36,7 @@ namespace MvcOnlineAutomationProject.Controllers
         }
         public ActionResult UpdateBill(Bill bill)
         {
-            var Values = context.Bills.Find(bill);
+            var Values = context.Bills.Find(bill.BillId);
             Values.Date = bill.Date;
             Values.Time=bill.Time;
             Values.BillRowNumber= bill.BillRowNumber;
@@ -50,9 +50,11 @@ namespace MvcOnlineAutomationProject.Controllers
         public ActionResult DetailBill(int id)
         {
             var Values = context.InvoiceItems.Where(x => x.Billid == id).ToList();
+            var Vlu = context.Bills.Where(x => x.BillId == id).Select(y => y.BillSerialNumber).FirstOrDefault();
+            ViewBag.V = Vlu;
             return View(Values);
         }
-        [HttpGet]
+
         public ActionResult AddInvoiceItem()
         {
             return View();

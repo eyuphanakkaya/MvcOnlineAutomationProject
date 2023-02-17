@@ -1,0 +1,40 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Bill
+@{
+    ViewBag.Title = "GetBill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GetBill</h2>
+
+@using (Html.BeginForm("UpdateBill", "Bill", FormMethod.Post))
+{
+    <div class="form-group">
+
+        <label>Seri Numarası</label>
+        @Html.TextBoxFor(x => x.BillSerialNumber, new { @class = "form-control" })
+        <br />
+        <label>Vergi Dairesi</label>
+        @Html.TextBoxFor(x=>x.TaxAdministration,new {@class="form-control"})
+        <br />
+        <label>Teslim Alan</label>
+        @Html.TextBoxFor(x=>x.Delivery, new { @class = "form-control" })
+        <br />
+        <label>Alıcı</label>
+        @Html.TextBoxFor(x=>x.Receiver, new { @class = "form-control" })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(x=>x.Date, new { @class = "form-control" })
+        <br />
+        <label>Saat</label>
+        @Html.TextBoxFor(x=>x.Time, new { @class = "form-control" })
+        <br />
+        <label>Tutar</label>
+        @Html.TextBoxFor(x=>x.Total, new { @class = "form-control" })
+        <br />
+
+
+        @Html.HiddenFor(x => x.BillId)
+    </div>
+    <button class="btn btn-dark">Güncelle</button>
+}
+

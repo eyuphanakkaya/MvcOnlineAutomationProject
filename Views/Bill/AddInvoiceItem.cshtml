@@ -1,0 +1,25 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.InvoiceItem
+@{
+    ViewBag.Title = "AddInvoiceItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddInvoiceItem</h2>
+
+<form class="form-group" method="post">
+    <label>Ürün</label>
+    @Html.TextBoxFor(x => x.Statement, new { @class = "form-control" })
+    <br />
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    <label>Birim Fiyat</label>
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    <label>Total Fiyat</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-default" style="background-color:blanchedalmond">Ekle</button>
+</form>

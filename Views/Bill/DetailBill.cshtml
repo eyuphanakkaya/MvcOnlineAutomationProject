@@ -1,0 +1,34 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "DetailBill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DetailBill</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Seri Numarası=@ViewBag.V</li>
+</ol>
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Ürün</td>
+        <td>Adet</td>
+        <td>Birim Fiyat</td>
+        <td>Total Fiyat</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.InvoiceItemId</td>
+            <td>@item.Statement</td>
+            <td>@item.Amount</td>
+            <td>@item.UnitPrice</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+<a href="/Bill/AddInvoiceItem/" class="btn btn-default" style="background-color:darkgray">Yeni Fatura Kalem Ekle</a>
+
+

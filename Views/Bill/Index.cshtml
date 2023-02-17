@@ -16,10 +16,26 @@
         <td>Tarih</td>
         <td>Saat</td>
         <td>Tutar</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Güncelle</td>
+        <td>Detaylar</td>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BillId</td>
+            <td>@item.BillSerialNumber</td>
+            <td>@item.TaxAdministration</td>
+            <td>@item.Delivery</td>
+            <td>@item.Receiver</td>
+            <td>@item.Date</td>
+            <td>@item.Time</td>
+            <td>@item.Total</td>
+            <td><a href="/Bill/GetBill/@item.BillId" class="btn btn-default" style="background-color:aliceblue">Güncelle</a></td>
+            <td><a href="/Bill/DetailBill/@item.BillId" class="btn btn-default" style="background-color:aliceblue">Detay</a></td>
+        </tr>
+    }
+
+    
 </table>
+<a href="/Bill/AddBill/" class="btn btn-default" style="background-color:bisque">Yeni Fatura Giriş</a>
 

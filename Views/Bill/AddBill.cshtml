@@ -1,0 +1,34 @@
+﻿@model MvcOnlineAutomationProject.Models.EntityFramework.Bill
+@{
+    ViewBag.Title = "AddBill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddBill</h2>
+
+<form class="form-group" method="post">
+    <label>Seri Numarası</label>
+    @Html.TextBoxFor(x => x.BillSerialNumber, new { @class = "form-control" })
+    <br />
+    <label>Sıra Numarası</label>
+    @Html.TextBoxFor(x => x.BillRowNumber, new { @class = "form-control" })
+    <br />
+    <label>Teslim Alan</label>
+    @Html.TextBoxFor(x => x.Delivery, new { @class = "form-control" })
+    <br />
+    <label>Alıcı</label>
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    <br />
+    <label>Tutar</label>
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-default" style="background-color:blanchedalmond">Ekle</button>
+</form>
+
