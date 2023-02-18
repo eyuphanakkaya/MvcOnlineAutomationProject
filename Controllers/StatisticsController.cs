@@ -31,21 +31,21 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V8 = Value8;
             var Value9 = (from x in context.Products orderby x.SellPrice ascending select x.ProductName).FirstOrDefault();
             ViewBag.V9 = Value9;
-            var Value10 = context.Categories.Count().ToString();
+            var Value10 = context.Products.GroupBy(x => x.Brand).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault();
             ViewBag.V10 = Value10;
             var Value11 = context.Products.Count(x => x.ProductName == "Televizyon").ToString();
             ViewBag.V11 = Value11;
             var Value12 = context.Products.Count(x=>x.ProductName=="Bilgisayar").ToString();
             ViewBag.V12 = Value12;
-            var Value13 = context.Categories.Count().ToString();
+            var Value13 = context.Products.Where(c => c.ProductId == (context.Products.GroupBy(x => x.ProductId).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault())).Select(k => k.ProductName).FirstOrDefault();
             ViewBag.V13 = Value13;
             var Value14 = context.SalesMovements.Sum(x=>x.TotalPrice).ToString();
             ViewBag.V14 = Value14;
             DateTime Vlu=DateTime.Now;
             var Value15 = context.SalesMovements.Count(x => x.Date == Vlu).ToString();
             ViewBag.V15 = Value15;
-            var Value16 = context.SalesMovements.Where(x=>x.Date==Vlu).Sum(y=>y.TotalPrice).ToString();
-            ViewBag.V16 = Value16;
+            //var Value16 = context.SalesMovements.Where(x=>x.Date==Vlu).Sum(y=>y.TotalPrice).ToString();
+            //ViewBag.V16 = Value16;
 
             return View();
         }
