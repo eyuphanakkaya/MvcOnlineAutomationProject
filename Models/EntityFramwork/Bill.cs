@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Bill
+    public class Bill:Entity
     {
         [Key]
         public int BillId { get; set; }

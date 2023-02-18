@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class SalesMovement
+    public class SalesMovement:Entity
     {
         [Key]
         public int SalesMovementsId { get; set; }

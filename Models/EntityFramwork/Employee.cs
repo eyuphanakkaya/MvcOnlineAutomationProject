@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Employee
+    public class Employee:Entity
     {
         [Key]
         public int EmployeeId { get; set; }

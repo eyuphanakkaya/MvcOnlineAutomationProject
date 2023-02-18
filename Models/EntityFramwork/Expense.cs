@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Expense
+    public class Expense:Entity
     {
         [Key]
         public int ExpelnseId { get; set; }

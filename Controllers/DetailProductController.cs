@@ -13,8 +13,11 @@ namespace MvcOnlineAutomationProject.Controllers
         Context context = new Context();
         public ActionResult Index()
         {
-            var Values = context.Products.Where(x => x.ProductId == 1).ToList();
-            return View(Values);
+            DetailStatementProduct detailStartmant = new DetailStatementProduct();
+            //var Values = context.Products.Where(x => x.ProductId == 1).ToList();
+            detailStartmant.Products1 = context.Products.Where(x => x.ProductId == 1).ToList();
+            detailStartmant.Details1=context.Details.Where(y=>y.DetailId==1).ToList();
+            return View(detailStartmant);
         }
     }
 }

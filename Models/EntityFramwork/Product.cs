@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Product
+    public class Product:Entity
     {
         [Key]
         public int ProductId { get; set; }

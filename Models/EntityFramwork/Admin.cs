@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Admin
+    public class Admin:Entity
     {
         [Key]
         public int AdminId { get; set; }

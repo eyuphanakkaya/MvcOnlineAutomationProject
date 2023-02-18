@@ -149,7 +149,10 @@
     <Compile Include="Models\EntityFramwork\Context.cs" />
     <Compile Include="Models\EntityFramwork\Current.cs" />
     <Compile Include="Models\EntityFramwork\Departmant.cs" />
+    <Compile Include="Models\EntityFramwork\Detail.cs" />
+    <Compile Include="Models\EntityFramwork\DetailStatementProduct.cs" />
     <Compile Include="Models\EntityFramwork\Employee.cs" />
+    <Compile Include="Models\EntityFramwork\Entity.cs" />
     <Compile Include="Models\EntityFramwork\Expense.cs" />
     <Compile Include="Models\EntityFramwork\InvoiceItem.cs" />
     <Compile Include="Models\EntityFramwork\Product.cs" />

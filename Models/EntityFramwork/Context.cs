@@ -19,5 +19,6 @@ namespace MvcOnlineAutomationProject.Models.EntityFramwork
         public DbSet<Product> Products { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<SalesMovement> SalesMovements { get; set; }
+        public DbSet<Detail> Details { get; set; }
     }
 }

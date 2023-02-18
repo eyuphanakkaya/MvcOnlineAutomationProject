@@ -1,11 +1,12 @@
 ﻿
+using MvcOnlineAutomationProject.Models.EntityFramwork;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcOnlineAutomationProject.Models.EntityFramework
 {
-    public class Departmant
+    public class Departmant:Entity
     {
         [Key]
         public int DepartmantId { get; set; }
