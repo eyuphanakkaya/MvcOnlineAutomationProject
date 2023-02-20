@@ -146,6 +146,9 @@
     <Compile Include="Models\EntityFramwork\Admin.cs" />
     <Compile Include="Models\EntityFramwork\Bill.cs" />
     <Compile Include="Models\EntityFramwork\Category.cs" />
+    <Compile Include="Models\EntityFramwork\ClassGroup.cs" />
+    <Compile Include="Models\EntityFramwork\ClassGroup2.cs" />
+    <Compile Include="Models\EntityFramwork\ClassGroup3.cs" />
     <Compile Include="Models\EntityFramwork\Context.cs" />
     <Compile Include="Models\EntityFramwork\Current.cs" />
     <Compile Include="Models\EntityFramwork\Departmant.cs" />
@@ -2838,6 +2841,11 @@
     <Content Include="thumber\scss\_site-blocks.scss" />
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\Galery\Index.cshtml" />
+    <Content Include="Views\Statistics\SimpleTables.cshtml" />
+    <Content Include="Views\Statistics\Partial2.cshtml" />
+    <Content Include="Views\Statistics\Partial1.cshtml" />
+    <Content Include="Views\Statistics\Partial3.cshtml" />
+    <Content Include="Views\Statistics\Partial4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
