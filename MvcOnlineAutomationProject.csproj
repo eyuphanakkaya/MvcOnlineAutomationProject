@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SalesMovementController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +161,7 @@
     <Compile Include="Models\EntityFramwork\InvoiceItem.cs" />
     <Compile Include="Models\EntityFramwork\Product.cs" />
     <Compile Include="Models\EntityFramwork\SalesMovement.cs" />
+    <Compile Include="Models\EntityFramwork\ToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2846,6 +2848,8 @@
     <Content Include="Views\Statistics\Partial1.cshtml" />
     <Content Include="Views\Statistics\Partial3.cshtml" />
     <Content Include="Views\Statistics\Partial4.cshtml" />
+    <Content Include="Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Views\ToDo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

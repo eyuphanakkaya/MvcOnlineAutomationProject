@@ -60,5 +60,10 @@ namespace MvcOnlineAutomationProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult EmployeeList()
+        {
+            var Values = context.Employees.ToList();
+            return View(Values);
+        }
     }
 }
