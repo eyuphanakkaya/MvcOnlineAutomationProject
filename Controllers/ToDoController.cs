@@ -19,9 +19,9 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V2=Value2;
             var Value3=context.Categories.Count().ToString();
             ViewBag.V3=Value3;
-            var Value4=context.Currents.Count().ToString();
+            var Value4= (from x in context.Currents select x.CurrentCity).Distinct().Count().ToString();
             ViewBag.V4 = Value4;
-            var Value = (from x in context.Currents select x.CurrentCity).Distinct().Count().ToString();
+            var Value = context.ToDos.ToList();
             return View(Value);
         }
     }

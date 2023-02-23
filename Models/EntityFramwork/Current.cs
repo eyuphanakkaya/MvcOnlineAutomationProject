@@ -22,6 +22,9 @@ namespace MvcOnlineAutomationProject.Models.EntityFramework
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CurrentEmail { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string CurrentPassword { get; set; }
         public bool Status { get; set; }
         public ICollection<SalesMovement> SalesMovements { get; set; }
 
