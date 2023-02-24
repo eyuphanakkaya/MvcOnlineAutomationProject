@@ -1,5 +1,6 @@
 ﻿using MvcOnlineAutomationProject.Models.EntityFramework;
 using MvcOnlineAutomationProject.Models.EntityFramwork;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace MvcOnlineAutomationProject.Controllers
     {
         // GET: Category
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var Values = context.Categories.ToList();
+            var Values = context.Categories.ToList().ToPagedList(page, 5);
             return View(Values);
         }
         [HttpGet]

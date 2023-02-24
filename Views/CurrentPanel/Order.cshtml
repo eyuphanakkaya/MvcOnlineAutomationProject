@@ -1,0 +1,26 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramework
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<h2>Siparişler</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <td>Ürün</td>
+        <td>Fiyat</td>
+        <td>Tarih</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Price</td>
+            <td>@Convert.ToDateTime(item.Date).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+
+</table>
