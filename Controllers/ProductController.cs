@@ -12,10 +12,14 @@ namespace MvcOnlineAutomationProject.Controllers
     {
         // GET: Product
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var Values = context.Products.Where(x => x.Status == true).ToList();
-            return View(Values);
+            var Values = from x in context.Products select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                Values = Values.Where(y => y.ProductName.Contains(p));
+            }
+            return View(Values.ToList());
         }
         [HttpGet]
         public ActionResult AddProduct()

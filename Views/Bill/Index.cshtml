@@ -8,34 +8,59 @@
 <h2>Index</h2>
 <table class="table table-bordered">
     <tr>
-        <td>Id</td>
-        <td>Seri Numarası</td>
-        <td>Vergi Dairesi</td>
-        <td>Teslim Alan</td>
-        <td>Alıcı</td>
+        <td>Seri Sıra Numarası</td>
         <td>Tarih</td>
         <td>Saat</td>
         <td>Tutar</td>
         <td>Güncelle</td>
         <td>Detaylar</td>
+        <td>Yeni Kalem</td>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.BillId</td>
-            <td>@item.BillSerialNumber</td>
-            <td>@item.TaxAdministration</td>
-            <td>@item.Delivery</td>
-            <td>@item.Receiver</td>
+            <td>@item.BillSerialNumber @item.BillRowNumber</td>
             <td>@item.Date</td>
             <td>@item.Time</td>
             <td>@item.Total</td>
             <td><a href="/Bill/GetBill/@item.BillId" class="btn btn-default" style="background-color:aliceblue">Güncelle</a></td>
             <td><a href="/Bill/DetailBill/@item.BillId" class="btn btn-default" style="background-color:aliceblue">Detay</a></td>
+            <td><a href="/Bill/DetailBill/@item.BillId" class="btn btn-default" style="background-color: azure">Yeni Kalem</a></td>
         </tr>
     }
 
-    
+
 </table>
 <a href="/Bill/AddBill/" class="btn btn-default" style="background-color:bisque">Yeni Fatura Giriş</a>
+<br />
+
+<button class=" btn btn-default" style="background-color: gainsboro" data-toggle="modal" data-target="#Modal1">PopUp Penceresi</button>
+
+<div class="modal" id="Madel1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">PopUp Diyalog</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Seri No</td>
+                        <td>Sıra No</td>
+                        <td>Tutar</td>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.BillSerialNumber</td>
+                            <td>@item.BillRowNumber</td>
+                            <td>@item.Total</td>
+                        </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tamam</button>
+            </div>
+        </div>
+    </div>
+</div>
 
