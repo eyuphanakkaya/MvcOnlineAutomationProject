@@ -6,7 +6,7 @@
 
 <h2>GetEmployee</h2>
 
-@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post,new {enctype="multipart/form-data"}))
 {
     <div class="form-group">
         @*@Html.HiddenFor(x=>x.ProductId)*@
@@ -17,7 +17,8 @@
         @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
         <br />
         <label>Resim</label>
-        @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+        @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+        <input type="file" name="EmployeeImage" />
         <br />
         <label>Kategori</label>
         @*@Html.TextBoxFor(x => x.Category, new { @class = "form-control" })*@

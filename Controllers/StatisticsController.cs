@@ -42,11 +42,11 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V13 = Value13;
             var Value14 = context.SalesMovements.Sum(x => x.TotalPrice).ToString();
             ViewBag.V14 = Value14;
-            DateTime Vlu = DateTime.Now;
+            DateTime Vlu = DateTime.Today;
             var Value15 = context.SalesMovements.Count(x => x.Date == Vlu).ToString();
             ViewBag.V15 = Value15;
-            //var Value16 = context.SalesMovements.Where(x=>x.Date==Vlu).Sum(y=>y.TotalPrice).ToString();
-            //ViewBag.V16 = Value16;
+            var Value16 = context.SalesMovements.Where(x => x.Date == Vlu).Sum(y => (decimal?)y.TotalPrice).ToString();
+            ViewBag.V16 = Value16;
 
             return View();
         }

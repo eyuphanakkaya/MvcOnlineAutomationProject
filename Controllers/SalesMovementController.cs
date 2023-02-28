@@ -102,5 +102,6 @@ namespace MvcOnlineAutomationProject.Controllers
             var Values = context.SalesMovements.Where(x => x.SalesMovementsId == id).ToList();
             return View(Values);
         }
+       
     }
 }

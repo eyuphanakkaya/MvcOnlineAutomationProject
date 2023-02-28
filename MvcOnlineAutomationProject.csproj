@@ -2913,9 +2913,11 @@
     <Content Include="Views\CurrentPanel\Index.cshtml" />
     <Content Include="Views\Login\CurrentPartial.cshtml" />
     <Content Include="Views\CurrentPanel\Order.cshtml" />
+    <Content Include="Views\Product\MakeSale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

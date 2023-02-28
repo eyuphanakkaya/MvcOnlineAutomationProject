@@ -1,5 +1,6 @@
 ﻿using MvcOnlineAutomationProject.Models.EntityFramework;
 using MvcOnlineAutomationProject.Models.EntityFramwork;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,6 +79,31 @@ namespace MvcOnlineAutomationProject.Controllers
             var Value=context.Products.ToList();
             return View(Value);
         }
+        [HttpGet]
+        public ActionResult MakeSale(int Id)
+        {
+            List<SelectListItem> Values1 = (from i in context.Employees.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = i.EmployeeName + " " + i.EmployeeSurname,
+                                                Value = i.EmployeeId.ToString()
 
+                                            }
+                                         ).ToList();
+            ViewBag.V = Values1;
+            var Values = context.Products.Find(Id);
+            ViewBag.V1 = Values.ProductId;
+            ViewBag.V2 = Values.SellPrice;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MakeSale(SalesMovement salesMovement)
+        {
+            salesMovement.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            var Value = context.SalesMovements.Add(salesMovement);
+            context.SaveChanges();
+            return RedirectToAction("Index", "SalesMovement");
+        }
     }
 }

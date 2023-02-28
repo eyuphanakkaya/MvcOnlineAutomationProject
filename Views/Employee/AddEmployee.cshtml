@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@using(Html.BeginForm("AddEmployee", "Employee", FormMethod.Post,new {enctype="multipart/form-data"}))
+{
+
 
 <form class=" form-group" method="post">
     <label>Personel Adı</label>
@@ -13,7 +16,9 @@
     @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
     <br />
     <label>Personel Resmi</label>
-    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+    <input type="file" name="EmployeeImage" />
+    <br />
     <br />
     <label>Personel Departman</label>
     @*@Html.TextBoxFor(x => x.Departmant, new { @class = "form-control" })*@
@@ -21,4 +26,5 @@
     <br />
     <button class="btn btn-dark">Kaydet</button>
 </form>
+}
 
