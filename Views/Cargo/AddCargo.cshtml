@@ -1,0 +1,28 @@
+﻿@model  MvcOnlineAutomationProject.Models.EntityFramwork.CargoDetail
+@{
+    ViewBag.Title = "AddCargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddCargo</h2>
+<form class="form-group" method="post">
+    <label>Takip Kodu</label>
+    <br />
+   <input type="text" name="StarckingCode" readonly class="form-control"  value="@ViewBag.code" />
+    <br />
+    <label>Personel</label>
+    <br />
+    @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
+    <label>Alıcı</label>
+    <br />
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <label>Tarih</label>
+    <br />
+    <input class="form-control" name="Date" type="date" />
+    <label>Açıklama</label>
+    <br />
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

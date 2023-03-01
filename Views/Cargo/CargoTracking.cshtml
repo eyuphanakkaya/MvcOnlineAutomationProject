@@ -1,0 +1,23 @@
+﻿@using MvcOnlineAutomationProject.Models.EntityFramwork
+@model List<CargoTracking>
+@{
+    ViewBag.Title = "CargoTracking";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Açıklama</td>
+        <td>Tarih</td>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Explanation</td>
+            <td>@item.DateTime</td>
+
+        </tr>
+    }
+
+</table>

@@ -60,6 +60,9 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\Downloads\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -135,6 +138,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\CurrentPanelController.cs" />
@@ -145,6 +149,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SalesMovementController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\ToDoController.cs" />
@@ -154,6 +159,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EntityFramwork\Admin.cs" />
     <Compile Include="Models\EntityFramwork\Bill.cs" />
+    <Compile Include="Models\EntityFramwork\CargoDetail.cs" />
+    <Compile Include="Models\EntityFramwork\CargoTracking.cs" />
     <Compile Include="Models\EntityFramwork\Category.cs" />
     <Compile Include="Models\EntityFramwork\ClassGroup.cs" />
     <Compile Include="Models\EntityFramwork\ClassGroup2.cs" />
@@ -2914,6 +2921,10 @@
     <Content Include="Views\Login\CurrentPartial.cshtml" />
     <Content Include="Views\CurrentPanel\Order.cshtml" />
     <Content Include="Views\Product\MakeSale.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cargo\AddCargo.cshtml" />
+    <Content Include="Views\Cargo\CargoTracking.cshtml" />
+    <Content Include="Views\QR\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
