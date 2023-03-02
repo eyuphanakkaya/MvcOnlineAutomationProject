@@ -54,6 +54,9 @@
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -116,9 +119,6 @@
       <Private>True</Private>
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -146,8 +146,10 @@
     <Compile Include="Controllers\DetailProductController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SalesMovementController.cs" />
@@ -173,7 +175,9 @@
     <Compile Include="Models\EntityFramwork\Employee.cs" />
     <Compile Include="Models\EntityFramwork\Entity.cs" />
     <Compile Include="Models\EntityFramwork\Expense.cs" />
+    <Compile Include="Models\EntityFramwork\Graphic.cs" />
     <Compile Include="Models\EntityFramwork\InvoiceItem.cs" />
+    <Compile Include="Models\EntityFramwork\Message.cs" />
     <Compile Include="Models\EntityFramwork\Product.cs" />
     <Compile Include="Models\EntityFramwork\SalesMovement.cs" />
     <Compile Include="Models\EntityFramwork\ToDo.cs" />
@@ -2925,10 +2929,13 @@
     <Content Include="Views\Cargo\AddCargo.cshtml" />
     <Content Include="Views\Cargo\CargoTracking.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Current\IncommingMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

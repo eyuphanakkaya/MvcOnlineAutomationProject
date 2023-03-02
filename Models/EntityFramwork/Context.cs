@@ -23,5 +23,6 @@ namespace MvcOnlineAutomationProject.Models.EntityFramwork
         public DbSet<ToDo> ToDos { get; set; }
         public DbSet <CargoDetail> CargoDetails { get; set; }
         public DbSet <CargoTracking> CargoTrackings { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }

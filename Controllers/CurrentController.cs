@@ -59,5 +59,18 @@ namespace MvcOnlineAutomationProject.Controllers
              ViewBag.V = Vlu;
             return View(Values);
         }
+        public ActionResult IncommingMessage()
+        {
+            var Value = context.Messages.ToList();
+            return View(Value);
+        }
+        //public ActionResult NewMessage()
+        //{
+        //    return View();
+        //}
+        //public ActionResult NewMessage()
+        //{
+        //    return View();
+        //}
     }
 }
