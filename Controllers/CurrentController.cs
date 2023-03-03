@@ -61,16 +61,24 @@ namespace MvcOnlineAutomationProject.Controllers
         }
         public ActionResult IncommingMessage()
         {
-            var Value = context.Messages.ToList();
+            var Email = (string)Session["CurrentEmail"];
+            var Value = context.Messages.Where(x=>x.Receiver==Email).ToList();
+            var NumberArrivals = context.Messages.Count(x => x.Receiver == Email).ToString();
+            var NumberOutgoing = context.Messages.Count(x => x.Sender == Email).ToString();
+            ViewBag.V1 = NumberOutgoing;
+            ViewBag.V=NumberArrivals;
             return View(Value);
         }
-        //public ActionResult NewMessage()
-        //{
-        //    return View();
-        //}
-        //public ActionResult NewMessage()
-        //{
-        //    return View();
-        //}
+        public ActionResult SenderMessage()
+        {
+            var Email = (string)Session["CurrentEmail"];
+            var Value = context.Messages.Where(x => x.Sender == Email).ToList();
+            var NumberOutgoing = context.Messages.Count(x => x.Sender == Email).ToString();
+            ViewBag.V1 = NumberOutgoing;
+            var NumberArrivals = context.Messages.Count(x => x.Receiver == Email).ToString();
+            ViewBag.V = NumberArrivals;
+            return View(Value);
+        }
+        
     }
 }
