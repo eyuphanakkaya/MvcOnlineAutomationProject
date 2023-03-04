@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineAutomationProject.Controllers
 {
@@ -20,6 +21,7 @@ namespace MvcOnlineAutomationProject.Controllers
             var Value = context.Currents.FirstOrDefault(x => x.CurrentEmail == CurrentMail);
             return View(Value);
         }
+        [Authorize]
         public ActionResult Order()
         {
             var CurrentMail = (string)Session["CurrentEmail"];
@@ -27,6 +29,7 @@ namespace MvcOnlineAutomationProject.Controllers
             var Value = context.SalesMovements.Where(x => x.Currentid == Id).ToList();
             return View(Value);
         }
+        [Authorize]
         public ActionResult MessageDetail(int id)
         {
 
@@ -38,6 +41,7 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V = NumberArrivals;
             return View(Values);
         }
+        [Authorize]
         [HttpGet]
         public ActionResult NewMessage()
         {
@@ -48,6 +52,7 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V = NumberArrivals;
             return View();
         }
+        [Authorize]
         [HttpPost]
         public ActionResult NewMessage(Message message)
         {
@@ -58,9 +63,26 @@ namespace MvcOnlineAutomationProject.Controllers
             context.SaveChanges();
             return View();
         }
-        public ActionResult CargoTracking()
+        [Authorize]
+        public ActionResult CargoTracking(string p)
         {
-            return View();
+            var Values = from x in context.CargoDetails select x;
+            Values = Values.Where(y => y.StarckingCode.Contains(p));
+            //var Value = context.CargoDetails.ToList();
+            return View(Values.ToList());
+        }
+        [Authorize]
+        public ActionResult CargoDetail(string id)
+        {
+            var Value = context.CargoTrackings.Where(x => x.StarckingCode == id).ToList();
+            return View(Value);
+        }
+        [Authorize]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
 
     }

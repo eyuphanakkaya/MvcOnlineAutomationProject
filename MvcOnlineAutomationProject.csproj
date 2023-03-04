@@ -145,6 +145,7 @@
     <Compile Include="Controllers\DepartmantController.cs" />
     <Compile Include="Controllers\DetailProductController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2935,6 +2936,8 @@
     <Content Include="Views\CurrentPanel\MessageDetail.cshtml" />
     <Content Include="Views\CurrentPanel\NewMessage.cshtml" />
     <Content Include="Views\CurrentPanel\CargoTracking.cshtml" />
+    <Content Include="Views\CurrentPanel\CargoDetail.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

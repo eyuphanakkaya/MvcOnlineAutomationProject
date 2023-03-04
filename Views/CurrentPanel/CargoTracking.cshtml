@@ -8,7 +8,7 @@
 
 
 <br />
-@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+@using (Html.BeginForm("CargoTracking", "CurrentPanel", FormMethod.Get))
 {
     <p>
         Kargo Takip Numarası : @Html.TextBox("p")
@@ -29,12 +29,11 @@
             <td>@item.Employee</td>
             <td>@item.Receiver</td>
             <td>@item.Date</td>
-            <td><a href="/Cargo/CargoTracking/@item.StarckingCode" class="btn btn-success">Detaylar</a></td>
+            <td><a href="/CurrentPanel/CargoDetail/@item.StarckingCode" class="btn btn-success">Detaylar</a></td>
 
         </tr>
     }
 
 </table>
-<a href="/Cargo/AddCargo/" class="btn btn-dark">Yeni Kargo Ekle </a>
 
 
