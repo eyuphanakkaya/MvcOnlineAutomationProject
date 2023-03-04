@@ -1,4 +1,5 @@
-﻿using MvcOnlineAutomationProject.Models.EntityFramwork;
+﻿using MvcOnlineAutomationProject.Models.EntityFramework;
+using MvcOnlineAutomationProject.Models.EntityFramwork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,14 +38,30 @@ namespace MvcOnlineAutomationProject.Controllers
             ViewBag.V = NumberArrivals;
             return View(Values);
         }
+        [HttpGet]
         public ActionResult NewMessage()
         {
+            var Email = (string)Session["CurrentEmail"];
+            var NumberOutgoing = context.Messages.Count(x => x.Sender == Email).ToString();
+            ViewBag.V1 = NumberOutgoing;
+            var NumberArrivals = context.Messages.Count(x => x.Receiver == Email).ToString();
+            ViewBag.V = NumberArrivals;
             return View();
         }
         [HttpPost]
-        public ActionResult NewMessage(Message  message)
+        public ActionResult NewMessage(Message message)
+        {
+            var Email = (string)Session["CurrentEmail"];
+            message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            message.Sender=Email;
+            context.Messages.Add(message);
+            context.SaveChanges();
+            return View();
+        }
+        public ActionResult CargoTracking()
         {
             return View();
         }
+
     }
 }

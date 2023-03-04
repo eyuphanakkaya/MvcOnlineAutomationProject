@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcOnlineAutomationProject.Models.EntityFramwork.Message
 @{
     ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
@@ -81,7 +81,7 @@
 
                 <div class="col-md-3">
 
-                    <a href="mailbox.html" class="btn btn-primary btn-block mb-3">Gelen Kutusu</a>
+                    @*<a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>*@
 
                     <div class="card">
 
@@ -107,11 +107,31 @@
 
                                 <li class="nav-item active">
 
+                                    <a href="/Current/IncommmingMessage/" class="nav-link">
+
+                                        <i class="fas fa-inbox"></i> Gelen Kutusu
+
+                                        <span class="badge bg-primary float-right">@ViewBag.V</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a href="/Current/SenderMessage/" class="nav-link">
+
+                                        <i class="far fa-envelope"></i> Gönderdiğim Mesajlar
+                                        <span class="badge bg-primary float-right">@ViewBag.V1</span>
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+
                                     <a href="#" class="nav-link">
 
-                                        <i class="fas fa-inbox"></i>  
-
-                                        <span class="badge bg-primary float-right">12</span>
+                                        <i class="far fa-file-alt"></i> Taslaklar
 
                                     </a>
 
@@ -121,27 +141,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="far fa-envelope"></i> Sent
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="#" class="nav-link">
-
-                                        <i class="far fa-file-alt"></i> Drafts
-
-                                    </a>
-
-                                </li>
-
-                                <li class="nav-item">
-
-                                    <a href="#" class="nav-link">
-
-                                        <i class="fas fa-filter"></i> Junk
+                                        <i class="fas fa-filter"></i> Gereksizler
 
                                         <span class="badge bg-warning float-right">65</span>
 
@@ -153,7 +153,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="far fa-trash-alt"></i> Trash
+                                        <i class="far fa-trash-alt"></i> Çöp Kutusu
 
                                     </a>
 
@@ -173,7 +173,7 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">Labels</h3>
+                            <h3 class="card-title">Filtreler</h3>
 
                             <div class="card-tools">
 
@@ -187,27 +187,41 @@
 
                         </div>
 
-                        <!-- /.card-header -->
-
                         <div class="card-body p-0">
 
                             <ul class="nav nav-pills flex-column">
 
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="#"><i class="far fa-circle text-danger"></i> Important</a>
+                                    <a href="#" class="nav-link">
+
+                                        <i class="far fa-circle text-danger"></i>
+
+                                        Önemli Mesajlar
+
+                                    </a>
 
                                 </li>
 
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="#"><i class="far fa-circle text-warning"></i> Promotions</a>
+                                    <a href="#" class="nav-link">
+
+                                        <i class="far fa-circle text-warning"></i> Promosyonlar
+
+                                    </a>
 
                                 </li>
 
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="#"><i class="far fa-circle text-primary"></i> Social</a>
+                                    <a href="#" class="nav-link">
+
+                                        <i class="far fa-circle text-primary"></i>
+
+                                        Sosyal
+
+                                    </a>
 
                                 </li>
 
@@ -223,6 +237,7 @@
 
                 </div>
 
+
                 <!-- /.col -->
 
                 <div class="col-md-9">
@@ -236,45 +251,43 @@
                         </div>
 
                         <!-- /.card-header -->
+                        <form class="form-group" method="post">
+                            <div class="card-body">
 
-                        <div class="card-body">
+                                <div class="form-group">
 
-                            <div class="form-group">
-
-                                <input class="form-control" placeholder="Kime:">
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <input class="form-control" placeholder="Konu:">
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <textarea id="compose-textarea" class="form-control" style="height: 300px">
-
-                                merhaba
-                    </textarea>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <div class="btn btn-default btn-file">
-
-                                    <i class="fas fa-paperclip"></i> Dosya Seç
-
-                                    <input type="file" name="attachment">
+                                    <input class="form-control" name="Receiver" placeholder="Kime:">
 
                                 </div>
 
+                                <div class="form-group">
 
+                                    <input class="form-control" name="Subject" placeholder="Konu:">
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <textarea id="compose-textarea" name="Contents" class="form-control" style="height: 300px">
+                    </textarea>
+
+                                </div>
+
+                                @*<div class="form-group">
+
+                                    <div class="btn btn-default btn-file">
+
+                                        <i class="fas fa-paperclip"></i> Dosya Seç
+
+                                        <input type="file" name="attachment">
+
+                                    </div>
+
+
+                                </div>*@
+                                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
                             </div>
-
-                        </div>
-
+                        </form>
                         <!-- /.card-body -->
 
                         <div class="card-footer">
@@ -283,7 +296,7 @@
 
                                 <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslak</button>
 
-                                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                               
 
                             </div>
 
